@@ -39,11 +39,11 @@ while True:
         multiline_list = tmp.splitlines() #listになることで、何行あるかは分かる
         matrix_list = []
         for multiline in multiline_list:
-            print(multiline.split())
+            #print(multiline.split())
             #matrix_list.append(multiline.split())
             matrix_list.append([float(num) for num in multiline.split()])  # 各要素をfloatに変換
         matrix_np = np.array(matrix_list)
-        print(matrix_np)
+        #print(matrix_np)
 
         #行列計算処理
         inverse_result = calculator.calculate_inverse(matrix_np)
