@@ -25,6 +25,10 @@ def calculate_eigenvalues(matrix):
     except np.linalg.LinAlgError:
         return "固有値の計算に失敗しました。"
 
+# ランクの計算
+def calculate_rank(matrix):
+    return np.linalg.matrix_rank(matrix)
+
 
 print("\n逆行列:")
 print(calculate_inverse(matrix))
@@ -37,3 +41,6 @@ print(calculate_determinant(matrix))
 
 print("\n固有値:")
 print(calculate_eigenvalues(matrix))
+
+print("\nランク:")
+print(calculate_rank(matrix))
