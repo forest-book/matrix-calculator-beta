@@ -14,7 +14,8 @@ result_frame = [eg.Frame("matrix calculate result", [
     [eg.Text("inverse"), eg.Text("", key="-Inverse-")],
     [eg.Text("transpose"), eg.Text("", key="-Transpose-")],
     [eg.Text("determinant"), eg.Text("", key="-Determinant-")],
-    [eg.Text("eigenvalues"), eg.Text("", key="-Eigenvalues-")]
+    [eg.Text("eigenvalues"), eg.Text("", key="-Eigenvalues-")],
+    [eg.Text("rank"), eg.Text("", key="-Rank-")]
 ], font=("Monospace 18"))]
 
 layout = [
@@ -48,8 +49,9 @@ while True:
         transpose_result = calculator.calculate_transpose(matrix_np)
         determinant_result = calculator.calculate_determinant(matrix_np)
         eigenvalues_result = calculator.calculate_eigenvalues(matrix_np)
+        rank_result = calculator.calculate_rank(matrix_np)
 
-        print(inverse_result)
+        #print(inverse_result)
         #print(matrix_list)
         #print("-----")
         #print(type(matrix_np))
@@ -60,5 +62,6 @@ while True:
         window["-Transpose-"].update(str(transpose_result))
         window["-Determinant-"].update(str(determinant_result))
         window["-Eigenvalues-"].update(str(eigenvalues_result))
+        window["-Rank-"].update(str(rank_result))
     
 window.close()
