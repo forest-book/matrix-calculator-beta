@@ -17,6 +17,14 @@ def calculate_transpose(matrix):
 def calculate_determinant(matrix):
     return np.linalg.det(matrix)
 
+# 固有値の計算
+def calculate_eigenvalues(matrix):
+    try:
+        eigenvalues, _ = np.linalg.eig(matrix)
+        return eigenvalues
+    except np.linalg.LinAlgError:
+        return "固有値の計算に失敗しました。"
+
 
 print("\n逆行列:")
 print(calculate_inverse(matrix))
@@ -26,3 +34,6 @@ print(calculate_transpose(matrix))
 
 print("\n行列式:")
 print(calculate_determinant(matrix))
+
+print("\n固有値:")
+print(calculate_eigenvalues(matrix))
