@@ -13,8 +13,16 @@ def calculate_inverse(matrix):
 def calculate_transpose(matrix):
     return matrix.T
     
+# 行列式の計算
+def calculate_determinant(matrix):
+    return np.linalg.det(matrix)
+
+
 print("\n逆行列:")
 print(calculate_inverse(matrix))
 
 print("\n転置行列:")
 print(calculate_transpose(matrix))
+
+print("\n行列式:")
+print(calculate_determinant(matrix))
