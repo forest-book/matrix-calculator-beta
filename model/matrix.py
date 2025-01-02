@@ -29,6 +29,10 @@ def calculate_eigenvalues(matrix):
 def calculate_rank(matrix):
     return np.linalg.matrix_rank(matrix)
 
+#対角行列
+def calculate_diag(matrix):
+  return np.diag(matrix)
+
 
 print("\n逆行列:")
 print(calculate_inverse(matrix))
@@ -44,3 +48,6 @@ print(calculate_eigenvalues(matrix))
 
 print("\nランク:")
 print(calculate_rank(matrix))
+
+print("\n対角行列:")
+print(calculate_diag(matrix))
