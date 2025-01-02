@@ -9,6 +9,7 @@ class Presenter:
     self.calculator = CalcMatrix()
     self.validator = Validator()
 
+#----------Model----------
   def get_npmatrix(self, values):
     data = values["-Matrix-"]
     npmatrix = self.validator.convert_to_npmatrix(data)
@@ -28,9 +29,9 @@ class Presenter:
     results.update(eigenvalues_result=eigenvalues_result)
     results.update(rank_result=rank_result)
     results.update(diag_result=diag_result)
-    #print(results)
     return results
 
+#----------View----------
   def update_view(self, results):
     self.window["-Inverse-"].update(str(results['inverse_result']))
     self.window["-Transpose-"].update(str(results['transpose_result']))
@@ -42,12 +43,12 @@ class Presenter:
   def finish_popup(self):
     eg.popup("finish calculate")
 
+#----------Event Process----------
   def calculate_event(self, values):
     matrix = self.get_npmatrix(values)
     results = self.matrix_calc(matrix)
     self.finish_popup()
     self.update_view(results)
     
-
   def hoge_event(self, _):
     eg.popup("hoge")
