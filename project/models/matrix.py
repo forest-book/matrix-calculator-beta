@@ -17,12 +17,20 @@ class CalcMatrix:
     # 転置行列の計算
     @staticmethod
     def calculate_transpose(matrix):
-        return matrix.T
+        try:
+            return matrix.T
+        except Exception as e:
+            print(e)
+            return "転置行列が存在しない行列です。"
 
     # 行列式の計算
     @staticmethod
     def calculate_determinant(matrix):
-        return np.linalg.det(matrix)
+        try:
+            return np.linalg.det(matrix)
+        except Exception as e:
+            print(e)
+            return "行列式が存在しない行列です。"
 
     # 固有値の計算
     @staticmethod
@@ -36,12 +44,20 @@ class CalcMatrix:
     # ランクの計算
     @staticmethod
     def calculate_rank(matrix):
-        return np.linalg.matrix_rank(matrix)
+        try:
+            return np.linalg.matrix_rank(matrix)
+        except Exception as e:
+            print(e)
+            return "ランクが存在しない行列です。"
 
     #対角行列
     @staticmethod
     def calculate_diag(matrix):
-        return np.diag(matrix)
+        try:
+            return np.diag(matrix)
+        except Exception as e:
+            print(e)
+            return "対角行列が存在しない行列です。"
 
 #Debug用コード
 # def calculate_inverse(matrix):
